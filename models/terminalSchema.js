@@ -5,7 +5,10 @@ var terminalSchema = mongoose.Schema({
   code: String,
   state: String,
   district: String,
-  pincode: Number
+  pincode: Number,
+  datarate: Number,
+  transmission_power: Number,
+  type: String
 });
 
 module.exports = mongoose.model('Terminal', terminalSchema);

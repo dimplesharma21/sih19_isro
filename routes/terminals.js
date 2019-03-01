@@ -13,15 +13,15 @@ router.get("/", function(req, res){
   })
 });
 
-// router.post("/",function(req,res){
-//   var terminal = new Terminal(req.body)
-//   terminal.save(function(err){
-//       if(err)
-//         console.log(err);
-//       else
-//         console.log(terminal);
-//    })
-// });
+router.post("/",function(req,res){
+  var terminal = new Terminal(req.body)
+  terminal.save(function(err){
+      if(err)
+        console.log(err);
+      else
+        console.log(terminal);
+   })
+});
 
 router.get("/:id", function(req, res){
   Terminal.findOne({code:req.params.id}, function(err, terminal){

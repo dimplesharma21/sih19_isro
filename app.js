@@ -6,7 +6,16 @@ var bodyParser = require('body-parser')
 var path=require('path');
 
 //mongodb connection
-mongoose.connect('mongodb://localhost/isro');
+// mongoose.connect('mongodb://localhost/isro');
+
+// DB Config
+const db = require('./config/keys').mongoURI;
+
+// Connect to MongoDB
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
 // schema
 var models = require('./models/terminalSchema');
