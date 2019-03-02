@@ -22,6 +22,9 @@ var models = require('./models/terminalSchema');
 var terminals = require('./routes/terminals');
 var lookangle = require('./routes/lookangle');
 var satellites = require('./routes/satellites');
+var cors = require('cors')
+
+app.use(cors())
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: true }));
