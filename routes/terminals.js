@@ -9,7 +9,8 @@ router.use(bodyParser.json());
 
 router.get("/", function(req, res){
   Terminal.find({}, function(err, terminals){
-    console.log(terminals);
+    // console.log(terminals);
+    res.send(terminals);
   })
 });
 
@@ -19,13 +20,15 @@ router.post("/",function(req,res){
       if(err)
         console.log(err);
       else
-        console.log(terminal);
+        res.send(terminal);
+        // console.log(terminal);
    })
 });
 
 router.get("/:id", function(req, res){
   Terminal.findOne({code:req.params.id}, function(err, terminal){
-    console.log(terminal);
+    // console.log(terminal);
+  res.send(terminal);
   })
 });
 
