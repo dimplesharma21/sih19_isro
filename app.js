@@ -3,7 +3,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
-var path=require('path');
+var path=require('path'); 
 
 //mongodb connection
 // mongoose.connect('mongodb://localhost/isro');
@@ -24,7 +24,7 @@ var lookangle = require('./routes/lookangle');
 var satellites = require('./routes/satellites');
 var cors = require('cors')
 
-app.use(cors())
+app.use(cors());
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: true }));
