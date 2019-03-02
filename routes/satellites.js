@@ -1,5 +1,5 @@
 var express = require('express');
-var Terminal = require('../models/satelliteSchema');
+var Satellite = require('../models/satelliteSchema');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
