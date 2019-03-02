@@ -20,6 +20,8 @@ mongoose
 // schema
 var models = require('./models/terminalSchema');
 var terminals = require('./routes/terminals');
+var lookangle = require('./routes/lookangle');
+var satellites = require('./routes/satellites');
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -45,9 +47,11 @@ app.get('/', function(req, res){
 })
 
 //routes
+app.use('/lookangle',lookangle);
+app.use('/satellites',satellites);
 app.use('/terminals',terminals);
 
 //hosting
-app.listen(3000,function(){
-    console.log("3000");
-})
+
+let port_number = process.env.PORT || 3000;
+app.listen(port_number);
