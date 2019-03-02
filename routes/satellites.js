@@ -14,4 +14,15 @@ router.get("/", function(req, res){
   })
 });
 
+router.post("/",function(req,res){
+  var satellite = new Satellite(req.body)
+  satellite.save(function(err){
+      if(err)
+        console.log(err);
+      else
+        res.send(satellite);
+        // console.log(terminal);
+   })
+});
+
 module.exports = router;
