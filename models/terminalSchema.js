@@ -8,7 +8,7 @@ var terminalSchema = mongoose.Schema({
   pincode: {type: Number, default: 789002},
   datarate: {type: Number, default: 5},
   transmission_power: {type: Number, default: 0},
-  type: {type: String, default: GSAT}
+  type: {type: String, default: 'GSAT'}
 });
 
 module.exports = mongoose.model('Terminal', terminalSchema);
